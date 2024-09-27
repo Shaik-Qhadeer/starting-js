@@ -55,8 +55,30 @@ const all_members= da_seekers.concat(da_bugslayrs)  //lekin jab bhi conacat use 
 
 //we can merge two arrays by using "spread operator"
 
-const all_team_members = [...da_seekers, ...da_bugslayrs]
+const all_team_members = [...da_seekers, ...da_bugslayrs] //... means spread operator ,iski madad se apan jo bhi values ku spread karna chahre kar sakte
 console.log(all_team_members);
+
+const myn4 = [1,2,3,4,[5,6],7,8,[5,6],9]
+console.log(myn4);
+console.log(myn4.flat(Infinity)); //infinity ki help se so arrays ke andar sub-arrays se wo kitni depth me hai calculate karne ki zarurat nai hai
+
+console.log(Array.isArray("shaik"));
+console.log(Array.of("shaik"));
+console.log(Array.from("shaik"));
+
+console.log(Array.from({name:"shaik"})); //whenever we are giving key-value pairs then it is converted into empty array ,agar particular key ya value ku access karna hai to mention karna pata
+
+let score1 = 100
+let score2 = 200
+let score3 = 300
+
+console.log(Array.of(score1, score2, score3));
+
+
+
+
+
+
 
 
 
