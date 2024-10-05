@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor="black" >
+    
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div);
+    div.className = 'main'
+    div.id = Math.round((Math.random()* 10 + 1) )
+
+
+
+    //agar custom attributes generate karna hai to setAttributes use karte jisme key value pairs ka use karte
+    //set Attributes direct values ku set karta pura tree traverse nai karte so ye optimized approach hai
+    //div.id, div.class ----> agar aisa use kare to values override hote
+
+    div.setAttribute("title","name is badshah")
+    div.style.backgroundColor = 'orange'
+    div.style.padding = '12px'
+    // div.innerText = 'mr unique coder'   //isme direct innerText add kardiye
+   const addText = document.createTextNode("mr unique coder")   //isme pehle ek new text node create karre then usku add kardere div me
+  div.appendChild(addText)        
+   
+    
+    document.body.appendChild(div)    //appendChild kar ke display karrejo bhi div create karre usku
+    
+        
+</script>
+</html>
