@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaik Qhadeer | DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li >javascript</li>
+    </ul>
+    
+</body>
+<script>
+    function addLang(langName) {
+       const li = document.createElement('li')
+       li.innerHTML = `${langName}`        //innerHTML use kare to pura tree traverse karna padta jo ki optimized approach nai hai
+       document.querySelector('.language').appendChild(li)
+    }
+    // addLang("python")
+    // addLang("typescript")
+
+
+    function addOptiLang(langName) {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))   //appendChild use kare jo ki ek optimized approach hai
+       document.querySelector('.language').appendChild(li)
+        
+    }
+     addLang("python")
+     addLang("Reactjs")
+     addLang("Css")
+
+    //Edit:
+    const secondLang = document.querySelector('li:nth-child(2)')
+    // console.log(secondLang);
+    // secondLang.innerHTML = 'Mojo'
+
+    // 👇isme pehle list create karre then replace karre seconglang ku new list se
+    const newli = document.createElement('li')
+    newli.textContent = 'Mojo'
+    secondLang.replaceWith(newli)
+
+
+     const firstLang = document.querySelector('li:first-child')
+    firstLang.outerHTML = '<li>Typescript</li>'                //isme simple outerHTML use kare aur list add kardiye..same print hojata output me
+
+    //Remove
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()   //simply queryselector se jo bhi child ku remove karna hai select kar ke remove kardo
+    
+    
+
+</script>
+
+</html>
