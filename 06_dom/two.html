@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    // console.log(parent);   //isme sirf ek parent div print hota
+    //  console.log(parent.children);     //ek html collection milta isme
+    // console.log(parent.children[2]);  //days starting from monday ,to wo hisaab se parent.children[2] matlab wednesday print hota
+    //  console.log(parent.children[0].innerHTML);  //innerHTML use kare to seedha oth children jo ki monday hai wo print hojata
+    //  for (let i = 0; i < parent.children.length; i++) {
+    //     console.log(parent.children[i].innerHTML);
+        
+    // } //As this HTML collection is similar to Array we can apply for loop..in this loop we have first initialized 0,then checkig length of parent.children then incrementing it and printing it
+
+
+    // parent.children[1].style.color = 'orange'   //Array[1] ku access karre aur uske upar operations perform karre
+    // console.log(parent.firstElementChild);   //first element child jo bhi hai usku print karta aur wo bhi html tags ke saath
+    // console.log(parent.lastElementChild);  //last element child jo bhi hai usku print karta aur wo bhi html tags ke saath
+    
+    
+    const dayOne = document.querySelector('.day')
+    // console.log(dayOne);
+    // console.log(dayOne.parentElement);  //puri parent class print hojati
+    // console.log(dayOne.nextElementSibling);  //next jo bhi sibling element hai usku print kardeta ..example:mon raha to tue print karta
+
+    console.log("NODES :",parent.childNodes);   //ye ek complex tree structure print karta in the form of nodes ..sirf days print nai karta but space,enter,div sab cheezan print karta
+    
+    
+
+    
+    
+    
+
+    
+</script>
+</html>
