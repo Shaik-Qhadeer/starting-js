@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Elements</title>
+</head>
+<body style="background-color: #414141;">
+    <h2>Amazing Images</h2>
+    <div>
+        <ul id="images">
+            <!-- <li><img width='200px' id="owl" src="https://images.pexels.com/photos/1376986/pexels-photo-1376986.jpeg?auto=compress&cs=tinysrgb&w=600" alt="owl" onclick="alert('owl')"></li>  //we can write onclick in html but it's not a good practice,it creates problem while scaling -->
+            <li><img width='200px' id="owl" src="https://images.pexels.com/photos/1376986/pexels-photo-1376986.jpeg?auto=compress&cs=tinysrgb&w=600" alt="owl" ></li>  //we can write onclick in html but it's not a good practice,it creates problem while scaling
+            <li><img width='200px' id="tiger"src="https://images.pexels.com/photos/2649841/pexels-photo-2649841.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""></li>
+            <li><img width='200px' id="car" src="https://images.pexels.com/photos/810357/pexels-photo-810357.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""></li>
+            <li><img width='200px' id="bike" src="https://images.pexels.com/photos/104842/bmw-vehicle-ride-bike-104842.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""></li>
+            <li><a href="https://google.com" id="google">Google</a></li>
+           
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById('owl').onclick = function(){
+    //     alert('owl clicked') //isme kuch bhi problem nai hai but onclick me zyada featuers nai hai to utna kaam me nai aata better we can use EventListeners 
+    // }
+
+    //attachEvent() ,jQuery - on //type ,timeStamp ,preventDefault,target ,toElement,srcElement,currentTarget,clientX , clientY ,screenX ,screenY 
+    //altkey ,ctrlkey ,shiftkey , keycode
+
+    // document.getElementById('owl').addEventListener('click',function(){
+    //     alert('owl clicked again')
+    // },false)
+      //1st parameter click hai to string me likḥna ,2nd function hai , 3rd false likhe(bydefault bhi false ich rahta lekin thode applications me false likhna zaroori rahta so false likhna better hai)
+
+
+
+      //Event propogation  :- iske two context hai   1)event bubling(bubble bottom to top me jaata)-->ye false likhe jab aata, 2)event capturing(top - bottom)-->ye true likhe jab aata  :
+         
+        //  document.getElementById('images').addEventListener('click',function(){
+        // console.log('clicked inside the ul');
+            
+
+        //   },false)
+        //  document.getElementById('owl').addEventListener('click',function(){
+        //     console.log('owl clicked');  //pehle owl cliked aata,then clicked inside the ul kyunki isme false likhe means bubling bottom-top
+            
+
+        //  },false)
+
+        //  document.getElementById('images').addEventListener('click',function(){
+        //     console.log('clicked inside the ul');
+            
+        //  },true)
+        //  document.getElementById('owl').addEventListener('click',function(){
+        //     console.log('owl clicked');
+            
+        //  },true)  //isme clicked inside the ul pehle print hota then owl clicked kyunki true likhe that means top-bottom aata
+
+        //  document.getElementById('owl').addEventListener('click',function(e){
+        //     console.log('owl clicked');
+        //     e.stopPropagation()  //bubble hoke upar nai jaana sirf ye particular statement print hona bole to stop propogation use karte
+            
+        //  },true) 
+
+        // document.getElementById('images').addEventListener('click',function(){
+        // console.log('clicked inside the ul');
+            
+
+        //   },false)
+
+        //  document.getElementById('google').addEventListener('click',function(e){
+        //     e.preventDefault()
+        //     e.stopPropagation()  //sirf ye print hota dusra event print nai hota
+        //     console.log('google clicked');
+
+            
+
+        //  },false)
+
+
+
+
+
+        //Task to remove images:
+        document.querySelector('#images').addEventListener('click',function(e){
+            // console.log(e);        //events print kara ke check karre console pe
+            console.log(e.target.parentNode);
+            let removeIt = e.target.parentNode
+            removeIt.remove()    //pehle removeIt name ke variable
+                            //(or)
+            // removeIt.parentNode.removeChild(removeIt) //pehle parentNode ku  access karre then removeChild me konsa child remove karn hai wo likho 
+
+            console.log(e.target.tagName);
+            if(e.target.tagName === 'IMG'){
+                console.log(e.target.id);
+                let removeIt = e.target.parentNode
+                removeIt.remove()
+                
+
+            } //isme conditiion lagaye agar img pe click kare to id print hoti and image delete hojati but list pe click kare to sirf ul print hota
+            
+            
+        },false)
+
+        </script>
+         
+</html>
