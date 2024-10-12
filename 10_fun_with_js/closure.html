@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #313131;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+    
+</body>
+<script>
+    //lexical scoping:
+//     function init() {
+//     let name = "Mozilla"; // name is a local variable created by init
+//     function displayName() {
+//         // displayName() is the inner function, that forms a closure
+//         console.log(name); // use variable declared in the parent function
+//     }
+//     displayName();
+// }
+// init();
+
+// function outer(){
+//     let username = "qhadeer"
+//     function inner(){
+//         let secret = 123
+//         console.log("inner",username);
+        
+//     }
+//     function innerTwo(){
+//         console.log("innerTwo",username);
+//         console.log(secret);
+        
+        
+//     }
+
+//     inner()
+//     innerTwo()
+
+// }
+// outer()
+// console.log("TOO OUTER", username);
+//by this example we can understand that child can access properties of parents,but parents cannot..even siblings will not share their resources
+
+
+
+
+//closure:
+function makeFunc() {
+  const name = "Mozilla";
+  function displayName() {
+    console.log(name);
+  }
+  return displayName;
+}
+
+const myFunc = makeFunc();
+myFunc();
+
+</script>
+
+
+<script>
+    // document.getElementById('orange').onclick = function(){
+    //     document.body.style.backgroundColor = `orange`
+    // }
+    // document.getElementById('green').onclick = function(){
+    //     document.body.style.backgroundColor = `green`
+    // }
+
+    function clickHandler(color){
+        document.body.style.backgroundColor = `${color}`
+
+    }
+   
+    document.getElementById('orange').onclick = clickHandler("orange")
+    document.getElementById('green').onclick = clickHandler("green")
+    //👆This code creates a problem ,ye clickHandler direct execute hojara 
+
+
+    function clickHandler(color){
+         return function(){
+             document.body.style.backgroundColor = `${color}`
+
+         }
+    }
+    document.getElementById('orange').onclick = clickHandler("orange")
+    document.getElementById('green').onclick = clickHandler("green")
+    //👆in this approach we have used other function kyunki wo inner hai to outer wale ku access karsakta,aur ab wo function ku return karadere
+    
+
+
+
+
+
+
+</script>
+</html>
