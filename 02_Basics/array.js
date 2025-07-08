@@ -66,7 +66,7 @@ console.log(Array.isArray("shaik"));
 console.log(Array.of("shaik"));
 console.log(Array.from("shaik"));
 
-console.log(Array.from({name:"shaik"})); //whenever we are giving key-value pairs then it is converted into empty array ,agar particular key ya value ku access karna hai to mention karna pata
+console.log(Array.from({name:"shaik"})); //whenever we are giving key-value pairs then it is converted into empty array ,agar particular key ya value ku access karna hai to mention karna padta
 
 let score1 = 100
 let score2 = 200
